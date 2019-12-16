@@ -1,6 +1,7 @@
 package com.example.uasandroid.isi_menu;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -20,6 +21,7 @@ import com.example.uasandroid.Common.Common;
 import com.example.uasandroid.Interface.ItemClickListener;
 import com.example.uasandroid.R;
 import com.example.uasandroid.isi_menu.proses_menu.RecipesCategory;
+import com.example.uasandroid.isi_menu.recipes_isi_category.RecipesIsiActivity;
 import com.example.uasandroid.isi_menu.view_holder.RecipesCategoryViewHolder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -106,10 +108,10 @@ public class RecipesFragment extends Fragment {
                 viewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
-//                        Intent startGame = new Intent(view.getContext() ,Start.class);
+                        Intent startGame = new Intent(view.getContext() , RecipesIsiActivity.class);
                         Common.categoryId = adapter.getRef(position).getKey();
-                        Common.categoryName = model.getName();
-//                        startActivity(startGame);
+//                        Common.categoryName = model.getName();
+                        startActivity(startGame);
                     }
                 });
             }

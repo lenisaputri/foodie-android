@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <item
+        android:id="@+id/action_recipes"
+        android:enabled="true"
+        android:title="Recipes"
+        android:icon="@drawable/ic_dish"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:id="@+id/action_search"
+        android:enabled="true"
+        android:title="Search"
+        android:icon="@drawable/ic_magnifier"
+        app:showAsAction="ifRoom"/>
+
+    <item
+        android:enabled="true"
+        android:id="@+id/action_account"
+        android:title="Account"
+        android:icon="@drawable/ic_user"
+        app:showAsAction="ifRoom"/>
+
+</menu>

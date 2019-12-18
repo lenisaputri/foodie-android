@@ -1,18 +1,13 @@
 package com.example.uasandroid;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.preference.PreferenceFragmentCompat;
 
 public class SettingsActivity extends AppCompatActivity {
     private Switch toggle;
@@ -57,9 +52,5 @@ public class SettingsActivity extends AppCompatActivity {
         startActivity(intent);
         this.overridePendingTransition(0,0);
     }
-
-
-
-
 
 }

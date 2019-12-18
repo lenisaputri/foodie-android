@@ -8,17 +8,27 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 
 import com.example.uasandroid.R;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SearchFragment extends Fragment {
 
+    EditText edtNewUser, edtNewUserName, edtNewPassword; //for sing up
 
-    public SearchFragment() {
-        // Required empty public constructor
+    public static SearchFragment newInstances()
+    {
+        SearchFragment searchFragment = new SearchFragment();
+        return searchFragment;
     }
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
+
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

@@ -29,14 +29,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
+            android:onClick="backButton"
             android:background="@drawable/ic_arrow_back_white_24dp"/>
 
         <TextView
-            android:id="@+id/category_name"
+            android:id="@+id/category_judul_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="RECIPES"
             android:layout_marginRight="50dp"
+            android:text=""
             android:textStyle="bold"
             android:textColor="#ffffff"
             android:textSize="20sp"

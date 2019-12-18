@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +22,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import static com.example.uasandroid.Common.Common.categoryId;
+import static com.example.uasandroid.Common.Common.categoryName;
 
 public class IsiRecipesCategoryDetailActivity extends AppCompatActivity {
 
@@ -44,14 +46,14 @@ public class IsiRecipesCategoryDetailActivity extends AppCompatActivity {
         ListCategoryIsiDetail.hasFixedSize();
         ListCategoryIsiDetail.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
-        loadCategoryIsiDetail(categoryId);
+        loadCategoryIsiDetail(categoryName);
     }
 
-    private void loadCategoryIsiDetail(String categoryId) {
+    private void loadCategoryIsiDetail(String categoryName) {
 
         FirebaseRecyclerOptions<IsiRecipesCategoryDetail> options =
                 new FirebaseRecyclerOptions.Builder<IsiRecipesCategoryDetail>()
-                        .setQuery(categoriesIsiDetail.orderByChild("CategoryId").equalTo(categoryId), IsiRecipesCategoryDetail.class)
+                        .setQuery(categoriesIsiDetail.orderByChild("Name").equalTo(categoryName), IsiRecipesCategoryDetail.class)
                         .build();
 
         adapter = new FirebaseRecyclerAdapter<IsiRecipesCategoryDetail, IsiRecipesCategoryDetailViewHolder>(options)
@@ -71,17 +73,6 @@ public class IsiRecipesCategoryDetailActivity extends AppCompatActivity {
                         .into(viewHolder.category_image);
                 viewHolder.category_ingridient.setText(model.getIngridient());
                 viewHolder.category_method.setText(model.getMethod());
-
-                viewHolder.setItemClickListener(new ItemClickListener() {
-                    @Override
-                    public void onClick(View view, int position, boolean isLongClick) {
-//                        Intent startGame = new Intent(view.getContext() ,IsiRecipesCategoryDetailActivity.class);
-//                        Common.categoryId = adapter.getRef(position).getKey();
-////                        TextView nama = view.findViewById(R.id.category_name);
-////                        Common.categoryName = model.getName();
-//                        startActivity(startGame);
-                    }
-                });
             }
 
         };
@@ -103,5 +94,11 @@ public class IsiRecipesCategoryDetailActivity extends AppCompatActivity {
         if (adapter != null) {
             adapter.stopListening();
         }
+    }
+
+    public void backButtonDetail(View view) {
+        Intent intent =  new Intent(this, RecipesIsiActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 }

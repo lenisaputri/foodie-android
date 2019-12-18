@@ -13,6 +13,7 @@ import com.example.uasandroid.R;
 public class IsiRecipesCategoryViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
     public TextView category_name;
     public ImageView category_image;
+    public TextView category_judul_name;
 
     private ItemClickListener itemClickListener;
 

@@ -34,6 +34,6 @@ public class IsiRecipesCategoryDetailViewHolder extends RecyclerView.ViewHolder 
 
     @Override
     public void onClick(View view){
-        itemClickListener.onClick(view, getAdapterPosition(), false);
+//        itemClickListener.onClick(view, getAdapterPosition(), false);
     }
 }

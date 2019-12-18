@@ -19,9 +19,11 @@
         android:id="@+id/navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#F2E4E6"
+        android:background="#C03537"
         android:layout_alignParentBottom="true"
         app:menu="@menu/navigation"
+        app:itemIconTint="@drawable/bottom_nav_icon_color_selector"
+        app:itemTextColor="@drawable/bottom_nav_icon_color_selector"
         />
 
 </RelativeLayout>

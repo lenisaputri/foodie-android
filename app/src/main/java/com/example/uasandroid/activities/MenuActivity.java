@@ -1,5 +1,6 @@
 package com.example.uasandroid.activities;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -22,6 +23,13 @@ public class MenuActivity extends AppCompatActivity implements BottomNavigationV
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        SharedPreferences preferences = getSharedPreferences("SETTINGS", MODE_PRIVATE);
+        boolean useDarkMode = preferences.getBoolean("DARK_MODE", false);
+
+        if (useDarkMode) {
+            setTheme(R.style.ActivityThemeDark);
+        }
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 

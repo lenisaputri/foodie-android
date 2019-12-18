@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginBottom="5dp"
+    >
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/category_image"
+        android:text="Image"
+        android:scaleType="centerCrop"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/category_name"
+        android:layout_below="@+id/category_image"
+        android:gravity="center"
+        android:text="Name"
+        android:textColor="#000000"
+        android:textSize="24dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/judul_ingriedient"
+        android:layout_below="@+id/category_name"
+        android:text="INGRIDIENT :"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/category_ingriedient"
+        android:layout_below="@+id/judul_ingriedient"
+        android:text="Ingridient"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        android:layout_marginBottom="10dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/judul_method"
+        android:layout_below="@+id/category_ingriedient"
+        android:text="METHOD :"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/category_method"
+        android:layout_below="@+id/judul_method"
+        android:text="Method"
+        android:textColor="#000000"
+        android:textSize="18dp"
+        />
+</RelativeLayout>

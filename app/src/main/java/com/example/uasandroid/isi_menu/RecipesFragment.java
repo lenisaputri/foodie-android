@@ -110,7 +110,6 @@ public class RecipesFragment extends Fragment {
                     public void onClick(View view, int position, boolean isLongClick) {
                         Intent startGame = new Intent(view.getContext() , RecipesIsiActivity.class);
                         Common.categoryId = adapter.getRef(position).getKey();
-//                        Common.categoryName = model.getName();
                         startActivity(startGame);
                     }
                 });

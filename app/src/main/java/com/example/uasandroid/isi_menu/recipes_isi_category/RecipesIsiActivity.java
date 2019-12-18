@@ -2,9 +2,11 @@ package com.example.uasandroid.isi_menu.recipes_isi_category;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,7 +28,6 @@ import static com.example.uasandroid.Common.Common.categoryId;
 
 public class RecipesIsiActivity extends AppCompatActivity {
 
-    View myFragment;
     RecyclerView ListCategoryIsi;
     RecyclerView.LayoutManager layoutManager;
 
@@ -45,7 +46,7 @@ public class RecipesIsiActivity extends AppCompatActivity {
         ListCategoryIsi = (RecyclerView)findViewById(R.id.IsiCategory);
 
         ListCategoryIsi.hasFixedSize();
-        ListCategoryIsi.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        ListCategoryIsi.setLayoutManager(new GridLayoutManager(this.getApplicationContext(), 2));
 
         loadCategoryIsi(categoryId);
     }
@@ -76,11 +77,11 @@ public class RecipesIsiActivity extends AppCompatActivity {
                 viewHolder.setItemClickListener(new ItemClickListener() {
                     @Override
                     public void onClick(View view, int position, boolean isLongClick) {
-//                        Intent startGame = new Intent(view.getContext() ,Start.class);
-//                        Common.categoryId = adapter.getRef(position).getKey();
+                        Intent startGame = new Intent(view.getContext() ,IsiRecipesCategoryDetailActivity.class);
+                        Common.categoryId = adapter.getRef(position).getKey();
 //                        TextView nama = view.findViewById(R.id.category_name);
 //                        Common.categoryName = model.getName();
-//                        startActivity(startGame);
+                        startActivity(startGame);
                     }
                 });
             }

@@ -9,24 +9,30 @@
     android:layout_marginBottom="5dp"
     android:layout_height="250dp"
     >
-
-        <ImageView
+        <androidx.cardview.widget.CardView
+            app:cardCornerRadius="30dp"
+            app:cardMaxElevation="20dp"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/category_image"
-            android:text="Image"
-            android:scaleType="centerCrop"
-            />
+            android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/category_name"
-            android:text="Name"
-            android:textColor="@android:color/white"
-            android:textSize="24dp"
-            android:gravity="center"
-            android:layout_alignParentBottom="true"
-            android:background="#C03537"/>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/category_image"
+                    android:text="Image"
+                    android:scaleType="centerCrop"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/category_name"
+                    android:text="Name"
+                    android:textColor="@android:color/white"
+                    android:textSize="24dp"
+                    android:gravity="center"
+                    android:layout_alignParentBottom="true"
+                    android:background="#C03537"/>
+        </androidx.cardview.widget.CardView>
 
 </RelativeLayout>

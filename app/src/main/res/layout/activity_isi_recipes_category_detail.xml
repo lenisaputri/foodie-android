@@ -4,50 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".isi_menu.recipes_isi_category.RecipesIsiActivity">
+    tools:context=".isi_menu.recipes_isi_category.IsiRecipesCategoryDetailActivity">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="55dp" />
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:minHeight="?attr/actionBarSize"
-        android:background="#C03537"
-        android:theme="?attr/actionBarTheme"
-        >
+        app:layout_constraintGuide_begin="40dp" />
 
         <ImageButton
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="10dp"
             android:id="@+id/back_menu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:onClick="backButtonDetail"
-            android:background="@drawable/ic_arrow_back_white_24dp"/>
-
-        <TextView
-            android:id="@+id/category_judul_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="50dp"
-            android:text=""
-            android:textStyle="bold"
-            android:textColor="#ffffff"
-            android:textSize="20sp"
-            android:textAlignment="center"
-            />
-    </androidx.appcompat.widget.Toolbar>
+            android:background="@drawable/ic_arrow_back_black_24dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_marginTop="58dp"
-        android:id="@+id/IsiCategory"
+        android:layout_marginTop="42dp"
+        android:id="@+id/IsiCategoryDetail"
         app:layout_constraintTop_toBottomOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_width="match_parent"

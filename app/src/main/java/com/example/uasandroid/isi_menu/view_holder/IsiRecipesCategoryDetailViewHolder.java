@@ -10,17 +10,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.uasandroid.Interface.ItemClickListener;
 import com.example.uasandroid.R;
 
-public class IsiRecipesCategoryViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+public class IsiRecipesCategoryDetailViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
     public TextView category_name;
+    public TextView category_ingridient;
+    public TextView category_method;
     public ImageView category_image;
-    public TextView category_judul_name;
 
     private ItemClickListener itemClickListener;
 
-    public IsiRecipesCategoryViewHolder(@NonNull View itemView) {
+    public IsiRecipesCategoryDetailViewHolder(@NonNull View itemView) {
         super(itemView);
         category_image = (ImageView)itemView.findViewById(R.id.category_image);
         category_name = (TextView)itemView.findViewById(R.id.category_name);
+        category_ingridient = (TextView)itemView.findViewById(R.id.category_ingriedient);
+        category_method = (TextView)itemView.findViewById(R.id.category_method);
 
         itemView.setOnClickListener(this);
     }
@@ -31,6 +34,6 @@ public class IsiRecipesCategoryViewHolder extends RecyclerView.ViewHolder implem
 
     @Override
     public void onClick(View view){
-        itemClickListener.onClick(view, getAdapterPosition(), false);
+//        itemClickListener.onClick(view, getAdapterPosition(), false);
     }
 }

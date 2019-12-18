@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.uasandroid.Common.Common;
@@ -110,7 +111,7 @@ public class RecipesFragment extends Fragment {
                     public void onClick(View view, int position, boolean isLongClick) {
                         Intent startGame = new Intent(view.getContext() , RecipesIsiActivity.class);
                         Common.categoryId = adapter.getRef(position).getKey();
-//                        Common.categoryName = model.getName();
+                        Common.categoryName = model.getName();
                         startActivity(startGame);
                     }
                 });

@@ -119,7 +119,7 @@ public class RecipesIsiActivity extends AppCompatActivity {
         }
     }
 
-    public void backButton(View view) {
+    public void backButtonDetail(View view) {
         Intent intent =  new Intent(this, RecipesFragment.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);

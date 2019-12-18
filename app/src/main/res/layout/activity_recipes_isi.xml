@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:onClick="backButton"
+            android:onClick="backButtonDetail"
             android:background="@drawable/ic_arrow_back_white_24dp"/>
 
         <TextView

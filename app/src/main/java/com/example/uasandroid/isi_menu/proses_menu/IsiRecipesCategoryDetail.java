@@ -64,4 +64,6 @@ public class IsiRecipesCategoryDetail {
         result.put("Method", Method);
         return result;
     }
+
+
 }

@@ -3,25 +3,26 @@
     package="com.example.uasandroid">
 
     <application
-    android:allowBackup="true"
-    android:icon="@mipmap/ic_launcher"
-    android:label="FOODIE"
-    android:roundIcon="@mipmap/ic_launcher_round"
-    android:supportsRtl="true"
-    android:theme="@style/AppTheme">
-    <activity android:name=".isi_menu.recipes_isi_category.IsiRecipesCategoryDetailActivity"></activity>
-    <activity android:name=".isi_menu.recipes_isi_category.RecipesIsiActivity" />
-    <activity android:name=".activities.WelcomeActivity" />
-    <activity android:name=".activities.MenuActivity" />
-    <activity android:name=".proses_user.SignIn" />
-        <activity android:name=".SettingsActivity"/>
-    <activity android:name=".MainActivity">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="FOODIE"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".update_delete_user.UpdateUserActivity"></activity>
+        <activity android:name=".isi_menu.recipes_isi_category.IsiRecipesCategoryDetailActivity" />
+        <activity android:name=".isi_menu.recipes_isi_category.RecipesIsiActivity" />
+        <activity android:name=".activities.WelcomeActivity" />
+        <activity android:name=".activities.MenuActivity" />
+        <activity android:name=".proses_user.SignIn" />
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-    </activity>
-</application>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
 
 </manifest>

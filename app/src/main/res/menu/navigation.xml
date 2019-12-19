@@ -11,13 +11,6 @@
         app:showAsAction="ifRoom"/>
 
     <item
-        android:id="@+id/action_search"
-        android:enabled="true"
-        android:title="Search"
-        android:icon="@drawable/ic_magnifier"
-        app:showAsAction="ifRoom"/>
-
-    <item
         android:enabled="true"
         android:id="@+id/action_account"
         android:title="Account"

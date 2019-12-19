@@ -62,16 +62,6 @@ public class RecipesIsiActivity extends AppCompatActivity {
         ListCategoryIsi.setLayoutManager(new GridLayoutManager(this.getApplicationContext(), 2));
 
         loadCategoryIsi(categoryId);
-
-        TextView category_judul_name = (TextView)findViewById(R.id.category_judul_name);
-
-        if (position == 0){
-            category_judul_name.setText("BREAKFAST");
-        } else if(position == 1){
-            category_judul_name.setText("LUNCH");
-        } else if(position == 2){
-            category_judul_name.setText("DINNER");
-        }
     }
 
     private void loadCategoryIsi(String categoryId) {

@@ -37,8 +37,6 @@ public class SettingsActivity extends AppCompatActivity {
 
     }
 
-
-
     private void toggleDarkMode(boolean darkMode) {
         SharedPreferences.Editor editor = getSharedPreferences("SETTINGS", MODE_PRIVATE).edit();
         editor.putBoolean("DARK_MODE", darkMode);

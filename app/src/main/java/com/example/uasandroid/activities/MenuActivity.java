@@ -12,10 +12,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.example.uasandroid.R;
 import com.example.uasandroid.isi_menu.AccountFragment;
 import com.example.uasandroid.isi_menu.RecipesFragment;
-import com.example.uasandroid.isi_menu.SearchFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import android.os.Bundle;
 
 public class MenuActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
 
@@ -28,7 +25,8 @@ public class MenuActivity extends AppCompatActivity implements BottomNavigationV
 
         if (useDarkMode) {
             setTheme(R.style.ActivityThemeDark);
-        }
+        } else
+            setTheme(R.style.AppTheme);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
@@ -43,9 +41,6 @@ public class MenuActivity extends AppCompatActivity implements BottomNavigationV
         switch (menuItem.getItemId()) {
             case R.id.action_recipes:
                 openFragment(new RecipesFragment());
-                return true;
-            case R.id.action_search:
-                openFragment(new SearchFragment());
                 return true;
             case R.id.action_account:
                 openFragment(new AccountFragment());

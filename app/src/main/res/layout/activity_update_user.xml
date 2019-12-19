@@ -3,13 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".update_delete_user.UpdateUserActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_centerHorizontal="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_centerHorizontal="true">
 
             <TextView
                 android:id="@+id/judulLogin"
@@ -18,10 +19,10 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
-                android:text="SIGN UP"
+                android:text="UPDATE YOUR DATA"
                 android:textStyle="bold"
                 android:textColor="#C03537"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="10dp"
                 android:textSize="25sp"
                 android:textAlignment="center"
                 />
@@ -74,7 +75,20 @@
                     android:padding="20dp"
                     android:textColorHint="#606060"
                     android:inputType="textPassword"/>
-
             </LinearLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="0dp"
+                android:id="@+id/btn_update"
+                android:background="@drawable/button_background"
+                android:text="UPDATE"
+                android:textColor="@android:color/white" />
         </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,13 +27,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        SharedPreferences preferences = getSharedPreferences("SETTINGS", MODE_PRIVATE);
-        boolean useDarkMode = preferences.getBoolean("DARK_MODE", false);
-
-        if (useDarkMode) {
-            setTheme(R.style.ActivityThemeDark);
-        }
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -50,24 +43,5 @@ public class MainActivity extends AppCompatActivity {
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE
                         | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
 
-
-
-
-
     }
-
-    protected void onRestart() {
-        super.onRestart();
-
-        SharedPreferences preferences = getSharedPreferences("SETTINGS", MODE_PRIVATE);
-        boolean useDarkMode = preferences.getBoolean("DARK_MODE", false);
-
-        if (useDarkMode) {
-            setTheme(R.style.ActivityThemeDark);
-        }
-        recreate();
-
-    }
-
-
 }

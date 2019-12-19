@@ -2,6 +2,7 @@ package com.example.uasandroid.isi_menu;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,6 +30,8 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import static android.content.Context.MODE_PRIVATE;
 
 public class RecipesFragment extends Fragment {
 
@@ -47,6 +51,7 @@ public class RecipesFragment extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
 
         database = FirebaseDatabase.getInstance();
@@ -57,7 +62,20 @@ public class RecipesFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        myFragment = inflater.inflate(R.layout.fragment_recipes,container,false);
+        Context contextThemeWrapper;
+
+        SharedPreferences preferences = getActivity().getSharedPreferences("SETTINGS", MODE_PRIVATE);
+        boolean useDarkMode = preferences.getBoolean("DARK_MODE", false);
+
+        if (useDarkMode) {
+            contextThemeWrapper = new ContextThemeWrapper(getActivity(), R.style.ActivityThemeDark);
+        } else {
+            contextThemeWrapper = new ContextThemeWrapper(getActivity(), R.style.AppTheme);
+        }
+
+        LayoutInflater localInflater = inflater.cloneInContext(contextThemeWrapper);
+
+        myFragment = localInflater.inflate(R.layout.fragment_recipes,container,false);
 
         listCategory = myFragment.findViewById(R.id.listCategory);
         listCategory.setHasFixedSize(true);
@@ -80,7 +98,6 @@ public class RecipesFragment extends Fragment {
                 getActivity().finish();
             }
         });
-
 
     }
 

@@ -55,18 +55,6 @@
             android:id="@+id/btn_update_login"/>
 
         <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="DELETE"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:textColor="@android:color/white"
-            android:background="@drawable/button_background"
-            android:id="@+id/btn_delete_login"
-            android:layout_marginBottom="10dp"
-            />
-
-        <Button
             android:id="@+id/btnLgt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -35,6 +35,19 @@ public class MenuActivity extends AppCompatActivity implements BottomNavigationV
         openFragment(new RecipesFragment());
     }
 
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        SharedPreferences preferences = getSharedPreferences("SETTINGS", MODE_PRIVATE);
+        boolean useDarkMode = preferences.getBoolean("DARK_MODE", false);
+
+        if (useDarkMode) {
+            setTheme(R.style.ActivityThemeDark);
+        }
+        recreate();
+    }
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
@@ -58,17 +71,5 @@ public class MenuActivity extends AppCompatActivity implements BottomNavigationV
         if (addToBackstack)
         transaction.addToBackStack(null);
         transaction.commit();
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        SharedPreferences preferences = getSharedPreferences("SETTINGS", MODE_PRIVATE);
-        boolean useDarkMode = preferences.getBoolean("DARK_MODE", false);
-
-        if (useDarkMode) {
-            setTheme(R.style.ActivityThemeDark);
-        }
-        recreate();
     }
 }

@@ -1,8 +1,10 @@
 package com.example.uasandroid.proses_user;
 
+import android.content.Intent;
+
 import java.io.Serializable;
 
-public class User implements Serializable{
+public class User extends Intent implements Serializable{
     private String userName;
     private String userUserName;
     private String userPassword;

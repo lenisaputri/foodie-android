@@ -1,8 +1,11 @@
 package com.example.uasandroid.update_delete_user;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -10,9 +13,12 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import com.example.uasandroid.Common.Common;
 import com.example.uasandroid.R;
+import com.example.uasandroid.isi_menu.AccountFragment;
+import com.example.uasandroid.isi_menu.RecipesFragment;
 import com.example.uasandroid.proses_user.User;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.snackbar.Snackbar;
@@ -60,6 +66,25 @@ public class UpdateUserActivity extends AppCompatActivity {
                 }
             });
         }
+
+//        ImageButton imageButton = findViewById(R.id.back_menu_update);
+//
+//        imageButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                    // Create new fragment and transaction
+//                    Fragment newFragment = new AccountFragment();
+//                    // consider using Java coding conventions (upper first char class names!!!)
+//                    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+//
+//                    // Replace whatever is in the fragment_container view with this fragment,
+//                    // and add the transaction to the back stack
+//                    transaction.replace(R.id.account, newFragment);
+//                    transaction.addToBackStack(null);
+//
+//                    // Commit the transaction
+//            }
+//        });
     }
 
     private void updateUser() {

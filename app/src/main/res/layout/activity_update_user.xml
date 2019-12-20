@@ -12,6 +12,16 @@
             android:orientation="vertical"
             android:layout_centerHorizontal="true">
 
+            <ImageButton
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="10dp"
+                android:id="@+id/back_menu_update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/ic_arrow_back_black_24dp"/>
+
             <TextView
                 android:id="@+id/judulLogin"
                 android:layout_width="match_parent"
@@ -23,7 +33,6 @@
                 android:fontFamily="@font/certa_sans_medium"
                 android:textStyle="bold"
                 android:textColor="#C03537"
-                android:layout_marginTop="10dp"
                 android:textSize="25sp"
                 android:textAlignment="center"
                 />

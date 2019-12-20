@@ -2,6 +2,8 @@ package com.example.uasandroid.isi_menu.recipes_isi_category;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -117,10 +119,20 @@ public class RecipesIsiActivity extends AppCompatActivity {
             adapter.stopListening();
         }
     }
+//
+//    public void buttonBack(View view) {
+//        // Create new fragment and transaction
+//        Fragment newFragment = new RecipesFragment();
+//        // consider using Java coding conventions (upper first char class names!!!)
+//        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+//
+//        // Replace whatever is in the fragment_container view with this fragment,
+//        // and add the transaction to the back stack
+//        transaction.replace(R.id.action_recipes, newFragment);
+//        transaction.addToBackStack(null);
+//
+//        // Commit the transaction
+//        transaction.commit();
+//    }
 
-    public void backButtonDetail(View view) {
-        Intent intent =  new Intent(this, RecipesFragment.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
-    }
 }

@@ -2,14 +2,20 @@ package com.example.uasandroid.proses_user;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +27,7 @@ import android.widget.Toast;
 import com.example.uasandroid.Common.Common;
 import com.example.uasandroid.activities.MenuActivity;
 import com.example.uasandroid.R;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -41,6 +48,9 @@ public class SignIn extends AppCompatActivity {
 
     FirebaseDatabase database;
     DatabaseReference users;
+
+
+    private NotificationManager mNotificationManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,9 +92,28 @@ public class SignIn extends AppCompatActivity {
                     if(!user.isEmpty()) {
                         User login = dataSnapshot.child(user).getValue(User.class);
                         if (login.getUserPassword().equals(pwd)) {
+                            NotificationManager mNotificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                                NotificationChannel channel = new NotificationChannel("YOUR_CHANNEL_ID",
+                                        "YOUR_CHANNEL_NAME",
+                                        NotificationManager.IMPORTANCE_DEFAULT);
+                                channel.setDescription("YOUR_NOTIFICATION_CHANNEL_DISCRIPTION");
+                                mNotificationManager.createNotificationChannel(channel);
+                            }
+                            final NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getApplicationContext(), "YOUR_CHANNEL_ID")
+                                    .setSmallIcon(R.mipmap.ic_launcher) // notification icon
+                                    .setContentTitle("LOGIN") // title for notification
+                                    .setContentText("Succes Login!")// message for notification
+                                    .setAutoCancel(true); // clear notification after click
+
                             Intent homeActivity = new Intent(SignIn.this, MenuActivity.class);
                             Common.currentUser = login;
+                            PendingIntent pi = PendingIntent.getActivity(getApplicationContext(), 0, login, PendingIntent.FLAG_UPDATE_CURRENT);
+                            mBuilder.setContentIntent(pi);
+                            mNotificationManager.notify(0, mBuilder.build());
                             startActivity(homeActivity);
+                            NotificationManager nm = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+                            nm.notify(0, mBuilder.build());
                             finish();
                         } else
                             Toast.makeText(SignIn.this, "Wrong Password", Toast.LENGTH_SHORT).show();

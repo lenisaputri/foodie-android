@@ -25,8 +25,7 @@ public class MenuActivity extends AppCompatActivity implements BottomNavigationV
 
         if (useDarkMode) {
             setTheme(R.style.ActivityThemeDark);
-        } else
-            setTheme(R.style.AppTheme);
+        }
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
@@ -59,5 +58,17 @@ public class MenuActivity extends AppCompatActivity implements BottomNavigationV
         if (addToBackstack)
         transaction.addToBackStack(null);
         transaction.commit();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        SharedPreferences preferences = getSharedPreferences("SETTINGS", MODE_PRIVATE);
+        boolean useDarkMode = preferences.getBoolean("DARK_MODE", false);
+
+        if (useDarkMode) {
+            setTheme(R.style.ActivityThemeDark);
+        }
+        recreate();
     }
 }

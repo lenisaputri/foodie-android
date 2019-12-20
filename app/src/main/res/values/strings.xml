@@ -5,14 +5,14 @@
     <string name="skip">SKIP</string>
     <string name="start">GOT IT</string>
 
-    <string name="slide_1_title">Explore Recipes</string>
+    <string name="slide_1_title">EXPLORE RECIPES</string>
     <string name="slide_1_desc">The easiest way to find the food you are going to cook!</string>
 
-    <string name="slide_2_title">Category Recipes</string>
+    <string name="slide_2_title">CATEGORY RECIPES</string>
     <string name="slide_2_desc">Select the Category recipe you want to try to cook!</string>
 
-    <string name="slide_3_title">Detail Recipes</string>
-    <string name="slide_3_desc">display the recipe you choose and try cooking</string>
+    <string name="slide_3_title">DETAIL RECIPES</string>
+    <string name="slide_3_desc">Display the recipe you choose and try cooking</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

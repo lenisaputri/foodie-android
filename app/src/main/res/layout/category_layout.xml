@@ -30,6 +30,7 @@
                     android:text="Name"
                     android:textColor="@android:color/white"
                     android:textSize="24dp"
+                    android:fontFamily="@font/certa_sans_medium"
                     android:gravity="center"
                     android:layout_alignParentBottom="true"
                     android:background="#C03537"/>

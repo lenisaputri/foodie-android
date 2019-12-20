@@ -82,23 +82,9 @@ public class RecipesFragment extends Fragment {
         layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         listCategory.setLayoutManager(layoutManager);
 
-        backBtn();
         loadCategories();
 
         return myFragment;
-    }
-
-    private void backBtn() {
-        ImageButton btnBack = (ImageButton) myFragment.findViewById(R.id.back_menu);
-
-        btnBack.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                getActivity().finish();
-            }
-        });
-
     }
 
     private void loadCategories() {

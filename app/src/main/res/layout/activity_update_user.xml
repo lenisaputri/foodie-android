@@ -20,6 +20,7 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 android:text="UPDATE YOUR DATA"
+                android:fontFamily="@font/certa_sans_medium"
                 android:textStyle="bold"
                 android:textColor="#C03537"
                 android:layout_marginTop="10dp"

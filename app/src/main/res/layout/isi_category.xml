@@ -28,6 +28,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/category_name"
             android:text="Name"
+            android:fontFamily="@font/certa_sans_medium"
             android:textColor="@android:color/white"
             android:textSize="24dp"
             android:gravity="center"
